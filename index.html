@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=540, initial-scale=2">
     <title>Messenger Boy</title>
     <script>
         navigator.serviceWorker.register('service-worker.js', {scope: './'})
@@ -11,6 +12,9 @@
             });
     </script>
     <style media="screen">
+        body {
+          font-size: 3em;
+        }
         .track {
             height: 370px;
             border: 1px solid #c0c0c0;
@@ -25,10 +29,16 @@
           display: table-cell;
           vertical-align: middle;
         }
+
         .track-audio-file {
             text-align: left;
             display: table-cell;
             vertical-align: middle;
+            width: 800px;
+        }
+
+        .track-audio-file audio {
+          width: 100%;
         }
 
         .track-script {
