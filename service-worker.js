@@ -4,7 +4,9 @@ const ORIGIN = `${location.protocol}//${location.hostname}${(location.port ? ':'
 const STATIC_FILES = [
   `${ORIGIN}/`,
   `${ORIGIN}/index.html`,
-  `${ORIGIN}/audio/09_TOEIC2_tr09.mp3`
+  `${ORIGIN}/audio/09_TOEIC2_tr09.mp3`,
+  `${ORIGIN}/audio/14_TOEIC2_tr14.mp3`,
+  `${ORIGIN}/audio/18_TOEIC2_tr18.mp3`,
 ]
 const STATIC_FILE_URLS = new Set(STATIC_FILES)
 
