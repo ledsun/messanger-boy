@@ -7,6 +7,6 @@ self.addEventListener('install', (evt) => {
   evt.waitUntil(
     caches
     .open(STATIC_CACHE_NAME)
-    .then((cache) => cache.addAll(['/', '/index.html']))
+    .then((cache) => cache.addAll(['/messenger-boy/', '/messenger-boy/index.html']))
   )
 })
