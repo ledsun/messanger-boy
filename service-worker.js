@@ -8,6 +8,7 @@ const STATIC_FILES = [
   `${ORIGIN}/audio/14_TOEIC2_tr14.mp3`,
   `${ORIGIN}/audio/18_TOEIC2_tr18.mp3`,
   `${ORIGIN}/audio/19_TOEIC2_tr19.mp3`,
+  `${ORIGIN}/audio/21_TOEIC2_tr21.mp3`,
 ]
 const STATIC_FILE_URLS = new Set(STATIC_FILES)
 
