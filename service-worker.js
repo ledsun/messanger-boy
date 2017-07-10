@@ -22,6 +22,7 @@ self.addEventListener('fetch', function(event) {
 
           return response;
         }
+        console.log('not found');
       }).catch(function(error) {
 
         // match() か fetch() で発生する例外をハンドルする。
