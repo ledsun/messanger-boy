@@ -23,11 +23,7 @@ self.addEventListener('install', (evt) => {
 })
 
 function cacheAllFiles(cache) {
-  return cache.addAll(STATIC_FILES.values())
-  // return Promise.all(STATIC_FILES
-  //   .map((url) => fetch(new Request(url))
-  //     .then((res) => saveResposeToCache(cache, res))
-  //   ))
+  return cache.addAll(STATIC_FILES)
 }
 
 function saveResposeToCache(cache, response) {
@@ -40,15 +36,11 @@ function saveResposeToCache(cache, response) {
 
 // Return cache if cached
 self.addEventListener('fetch', (evt) => {
-  const matched = caches.match(evt.request, {
+  caches
+  .match(evt.request, {
     cacheName: STATIC_CACHE_NAME
   })
-
-  if (!matched) {
-    return
-  }
-
-  evt.respondWith(matched)
+  .then((response) => evt.respondWith(response))
 })
 
 // Clean old caches
