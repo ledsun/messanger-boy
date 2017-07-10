@@ -1,6 +1,6 @@
 const VERSION = 1
 const STATIC_CACHE_NAME = 'static_' + VERSION;
-const ORIGIN = `${location.protocol}//${location.hostname}${(location.port ? ':' + location.port : '')}`
+const ORIGIN = `${location.protocol}//${location.hostname}${(location.port ? ':' + location.port : '')}/messenger-boy`
 const STATIC_FILES = [
   `${ORIGIN}/`,
   `${ORIGIN}/index.html`,
