@@ -15,9 +15,7 @@ self.addEventListener('fetch', function(event) {
   console.log('Handling fetch event for', event.request.url);
 
   event.respondWith(
-
-    //  'font' で始まる Cache オブジェクトを開く。
-    caches.open(CURRENT_CACHES['font']).then(function(cache) {
+    caches.open(STATIC_CACHE_NAME).then(function(cache) {
       return cache.match(event.request).then(function(response) {
         if (response) {
           console.log(' Found response in cache:', response);
