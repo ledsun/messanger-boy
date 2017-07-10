@@ -10,3 +10,27 @@ self.addEventListener('install', (evt) => {
     .then((cache) => cache.addAll(['/messenger-boy/', '/messenger-boy/index.html']))
   )
 })
+
+self.addEventListener('fetch', function(event) {
+  console.log('Handling fetch event for', event.request.url);
+
+  event.respondWith(
+
+    //  'font' で始まる Cache オブジェクトを開く。
+    caches.open(CURRENT_CACHES['font']).then(function(cache) {
+      return cache.match(event.request).then(function(response) {
+        if (response) {
+          console.log(' Found response in cache:', response);
+
+          return response;
+        }
+      }).catch(function(error) {
+
+        // match() か fetch() で発生する例外をハンドルする。
+        console.error('  Error in fetch handler:', error);
+
+        throw error;
+      });
+    })
+  );
+});
