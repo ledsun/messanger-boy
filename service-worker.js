@@ -23,10 +23,11 @@ self.addEventListener('install', (evt) => {
 })
 
 function cacheAllFiles(cache) {
-  return Promise.all(STATIC_FILES
-    .map((url) => fetch(new Request(url))
-      .then((res) => saveResposeToCache(cache, res))
-    ))
+  return cache.addAll(STATIC_FILES.values())
+  // return Promise.all(STATIC_FILES
+  //   .map((url) => fetch(new Request(url))
+  //     .then((res) => saveResposeToCache(cache, res))
+  //   ))
 }
 
 function saveResposeToCache(cache, response) {
